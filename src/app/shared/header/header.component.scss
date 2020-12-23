@@ -1,0 +1,17 @@
+.logo {
+  color: rgb(51, 25, 215);
+  cursor: pointer;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+
+  &-prime {
+    color: black;
+    font-size: 2rem;
+    &-ng {
+      color: red;
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+nav {
+  font-family: "Roboto";
+  font-weight: normal;
+
+  .p-menubar {
+    background-color: black;
+    border: 0;
+    border-radius: 0;
+
+    .p-menuitem-link {
+      background-color: black !important;
+
+      .p-submenu-icon {
+        color: white !important;
+      }
+
+      .p-menuitem-text {
+        color: white !important;
+      }
+
+      &:hover {
+        .p-menuitem-text {
+          color: red !important;
+        }
+        .p-submenu-icon {
+          color: red !important;
+        }
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    p-menubarsub > .p-submenu-list {
+      background-color: black;
+    }
+  }
+}

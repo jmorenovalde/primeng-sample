@@ -1,0 +1,22 @@
+h2 {
+  font-family: "Roboto";
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 2rem;
+}
+
+.caption {
+  font-family: "Langar";
+  color: #ffffff;
+
+  & > h4 {
+    margin: 0;
+    padding: 0;
+  }
+}

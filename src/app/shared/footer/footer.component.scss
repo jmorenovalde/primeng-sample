@@ -1,0 +1,17 @@
+footer > div {
+  text-align: right;
+  padding: 1rem;
+  background-color: grey;
+  color: white;
+  font-family: Roboto;
+  font-weight: bold;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: lightskyblue;
+    }
+  }
+}
