@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,11 +6,30 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  /**
+   * Variable to indicate the direction of the page, LeftToRight or RightToLeft (arabic language).
+   */
+  public direction = 'ltr';
+
   constructor(private translateService: TranslateService) {
-    translateService.addLangs(['en', 'es']);
+    translateService.addLangs(['en', 'es', 'ar']);
     translateService.setDefaultLang('es');
     const browserLang = translateService.getBrowserLang();
-    translateService.use(browserLang.match(/en|es/) ? browserLang : 'es');
+    const language = browserLang.match(/en|es|ar/) ? browserLang : 'es';
+    translateService.use(language);
+    if (language === 'ar') {
+      this.direction = 'rtl';
+    }
+  }
+
+  ngOnInit(): void {
+    this.translateService.onLangChange.subscribe((language) => {
+      if (language?.lang === 'ar') {
+        this.direction = 'rtl';
+      } else {
+        this.direction = 'ltr';
+      }
+    });
   }
 }

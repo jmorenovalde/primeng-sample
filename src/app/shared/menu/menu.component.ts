@@ -26,25 +26,34 @@ export class MenuComponent implements OnInit {
    * The init method.
    */
   ngOnInit(): void {
-    this.translateService.onLangChange.subscribe(() => {
-      this.loadTranslations();
+    this.translateService.onLangChange.subscribe((language) => {
+      this.loadTranslations(language.translations);
     });
   }
 
-  private loadTranslations() {
-    this.translateService
-      .get([
-        'HOME',
-        'LIST',
-        'FORM',
-        'GRAPHICS',
-        'LANGUAGE',
-        'SPANISH',
-        'ENGLISH',
-      ])
-      .subscribe((translates) => {
-        this.items = this.initMenuItems(translates);
-      });
+  private loadTranslations(translations?: any) {
+    let translates: any;
+    if (translations) {
+      translates = translations;
+    } else {
+      this.translateService
+        .get([
+          'HOME',
+          'LIST',
+          'FORM',
+          'GRAPHICS',
+          'LANGUAGE',
+          'SPANISH',
+          'ENGLISH',
+          'ARABIC',
+        ])
+        .subscribe((items) => {
+          translates = items;
+        });
+    }
+    if (translates) {
+      this.items = this.initMenuItems(translates);
+    }
   }
 
   /**
@@ -79,6 +88,10 @@ export class MenuComponent implements OnInit {
           {
             label: translates['ENGLISH'],
             command: (event) => this.changeLanguage('en'),
+          },
+          {
+            label: translates['ARABIC'],
+            command: (event) => this.changeLanguage('ar'),
           },
         ],
       },

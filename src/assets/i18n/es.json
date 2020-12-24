@@ -1,11 +1,12 @@
 {
-  "HOME": "Home",
-  "LIST": "Listado",
-  "FORM": "Formulario",
-  "GRAPHICS": "Gráficas",
-  "LANGUAGE": "Idioma",
-  "SPANISH": "Español",
+  "ARABIC": "Árabe",
   "ENGLISH": "Inglés",
+  "FORM": "Formulario",
+  "GALLERY": "Galería",
+  "GRAPHICS": "Gráficas",
+  "HOME": "Home",
+  "LANGUAGE": "Idioma",
+  "LIST": "Listado",
   "PAGE_NOT_FOUND": "La dirección que buscas no está disponible.",
-  "GALLERY": "Galería"
+  "SPANISH": "Español"
 }

@@ -1,11 +1,12 @@
 {
-  "HOME": "Home",
-  "LIST": "List",
-  "FORM": "Form",
-  "GRAPHICS": "Graphics",
-  "LANGUAGE": "Language",
-  "SPANISH": "Spanish",
+  "ARABIC": "Arabic",
   "ENGLISH": "English",
+  "FORM": "Form",
+  "GALLERY": "Gallery",
+  "GRAPHICS": "Graphics",
+  "HOME": "Home",
+  "LANGUAGE": "Language",
+  "LIST": "List",
   "PAGE_NOT_FOUND": "The address that you search is not avaiable.",
-  "GALLERY": "Gallery"
+  "SPANISH": "Spanish"
 }
