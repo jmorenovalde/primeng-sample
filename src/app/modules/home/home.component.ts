@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { TranslateService } from '@ngx-translate/core';
+
+import { HomeService } from '@services/home.service';
+
+import { Photo, Section } from '@models/models';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +13,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  images: any[];
+  public images$: Observable<Photo[]>;
+  public sections$: Observable<Section[]>;
 
   responsiveOptions: any[] = [
     {
@@ -23,79 +31,27 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(
+    private homeService: HomeService,
+    private translateService: TranslateService
+  ) {}
 
   ngOnInit(): void {
-    this.images = this.loadImages();
+    this.translateService.onLangChange.subscribe((language) => {
+      this.loadImages(language.lang);
+      this.loadSections(language.lang);
+    });
   }
 
-  private loadImages(): any[] {
-    return [
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
-        alt:
-          'Foto de las montañas de Suiza de stock gratuita (www.freeimages.com)',
-        title: 'Las montañas de Suiza',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
-        alt: 'Foto de un crosscircle (www.freeimages.com)',
-        title: 'Crosscircle',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
-        alt: 'Foto de una libélula (www.freeimages.com)',
-        title: 'Dragon Fly',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
-        alt: 'Foto de la fachada de un edificio (www.freeimages.com)',
-        title: 'Fachada de edificio',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
-        alt: 'Foto un cañón (www.freeimages.com)',
-        title: 'Cañon',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
-        alt: 'Foto una culebra (www.freeimages.com)',
-        title: 'Culebra',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
-        alt: 'Foto de un campo de trigo (www.freeimages.com)',
-        title: 'Campo de trigo',
-      },
-      {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
-        alt: 'Foto de calabazas de halloween (www.freeimages.com)',
-        title: 'Halloween',
-      },
-    ];
+  /**
+   * Function to load the images.
+   * @param language {string} the code of the language to the de images.
+   */
+  private loadImages(language: string): void {
+    this.images$ = this.homeService.getGalleryPhotos(language);
+  }
+
+  private loadSections(language: string): void {
+    this.sections$ = this.homeService.getSections(language);
   }
 }

@@ -25,11 +25,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.translateService.onLangChange.subscribe((language) => {
-      if (language?.lang === 'ar') {
-        this.direction = 'rtl';
-      } else {
-        this.direction = 'ltr';
-      }
+      this.direction = this.getDirectionContent(language.lang);
     });
+  }
+
+  private getDirectionContent(language: string): string {
+    if (language === 'ar') {
+      return 'rtl';
+    } else {
+      return 'ltr';
+    }
   }
 }

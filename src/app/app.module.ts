@@ -10,17 +10,18 @@ import {
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { MenuModule } from './shared/menu/menu.module';
-import { HomeModule } from './modules/home/home.module';
-
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { AppComponent } from './app.component';
-import { ListComponent } from './pages/list/list.component';
-import { FormComponent } from './pages/form/form.component';
-import { GraphicsComponent } from './pages/graphics/graphics.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { appRoutes } from './app.routes';
+
+import { MenuModule } from '@shared/menu/menu.module';
+import { HomeModule } from '@modules/home/home.module';
+
+import { HeaderComponent } from '@shared/header/header.component';
+import { FooterComponent } from '@shared/footer/footer.component';
+import { AppComponent } from './app.component';
+import { ListComponent } from '@pages/list/list.component';
+import { FormComponent } from '@pages/form/form.component';
+import { GraphicsComponent } from '@pages/graphics/graphics.component';
+import { NotFoundComponent } from '@pages/not-found/not-found.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {

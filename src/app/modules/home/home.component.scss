@@ -18,5 +18,16 @@ h2 {
   & > h4 {
     margin: 0;
     padding: 0;
+
+    & > a {
+      color: white;
+      font-size: large;
+      text-decoration: none;
+
+      &:hover {
+        color: magenta;
+        text-decoration: underline;
+      }
+    }
   }
 }

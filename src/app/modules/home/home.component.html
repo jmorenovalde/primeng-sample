@@ -2,7 +2,7 @@
   <div class="p-col-12 p-md-6">
     <h2>{{ "GALLERY" | translate }}</h2>
     <p-galleria
-      [(value)]="images"
+      [value]="images$ | async"
       [responsiveOptions]="responsiveOptions"
       [containerStyle]="{
         'background-color': 'rgba(0, 0, 0, .85)'
@@ -40,91 +40,18 @@
       </ng-template>
       <ng-template pTemplate="caption" let-item>
         <div class="caption">
-          <h4>{{ item.title }}</h4>
+          <h4>
+            <a [href]="item.link" target="_blank">{{ item.title }}</a>
+          </h4>
           <span>{{ item.alt }}</span>
         </div>
       </ng-template>
     </p-galleria>
   </div>
   <div class="p-col-12 p-md-6">
-    <p-tabView>
-      <p-tabPanel header="Header 1">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec
-          faucibus orci. Vivamus leo diam, feugiat nec ornare vitae, venenatis
-          vitae ex. In sed tellus dolor. Vestibulum eget augue gravida, semper
-          lectus in, sollicitudin risus. Mauris nec accumsan nisl. Pellentesque
-          dictum nulla id eros imperdiet consequat. Curabitur at metus magna.
-          Maecenas convallis dignissim erat, sit amet tristique erat convallis
-          in. Pellentesque sollicitudin convallis elit, et venenatis odio
-          consequat ut.
-        </p>
-        <p>
-          In condimentum pulvinar fermentum. Ut viverra id mi vitae mattis.
-          Aliquam augue nulla, interdum at ex luctus, dapibus volutpat ex.
-          Vestibulum quis vulputate orci, sit amet dignissim ex. Vestibulum
-          pulvinar faucibus metus eget pulvinar. Nullam diam elit, dictum eu
-          ornare sit amet, tincidunt at erat. Etiam sollicitudin magna a egestas
-          tincidunt. Curabitur at blandit erat. Aliquam dictum volutpat eros id
-          dignissim. Aliquam erat volutpat. Orci varius natoque penatibus et
-          magnis dis parturient montes, nascetur ridiculus mus. Morbi turpis
-          sapien, finibus euismod augue non, iaculis ultrices nibh. Vivamus nec
-          porta neque, id maximus nunc. Nunc nec elementum libero. Donec
-          eleifend elementum consectetur.
-        </p>
-        <p>
-          Aliquam pharetra libero scelerisque gravida condimentum. Quisque non
-          erat quam. Cras velit lectus, vehicula vel tortor vitae, placerat
-          maximus nulla. Vivamus placerat posuere orci, eu sagittis mauris
-          sollicitudin sit amet. Morbi tincidunt neque et pretium sollicitudin.
-          Nullam quis mi maximus tellus sagittis sodales. Pellentesque in
-          porttitor nisi. In est lorem, ultrices ut iaculis vel, tincidunt nec
-          leo. Maecenas id libero lobortis, efficitur nisi et, rhoncus elit. Sed
-          gravida pellentesque justo sed suscipit. Donec varius maximus dolor a
-          suscipit.
-        </p>
-      </p-tabPanel>
-      <p-tabPanel header="Header 2">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec
-          faucibus orci. Vivamus leo diam, feugiat nec ornare vitae, venenatis
-          vitae ex. In sed tellus dolor. Vestibulum eget augue gravida, semper
-          lectus in, sollicitudin risus. Mauris nec accumsan nisl. Pellentesque
-          dictum nulla id eros imperdiet consequat. Curabitur at metus magna.
-          Maecenas convallis dignissim erat, sit amet tristique erat convallis
-          in. Pellentesque sollicitudin convallis elit, et venenatis odio
-          consequat ut.
-        </p>
-        <img
-          src="https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg"
-          style="float: right"
-        />
-        <p>
-          In condimentum pulvinar fermentum. Ut viverra id mi vitae mattis.
-          Aliquam augue nulla, interdum at ex luctus, dapibus volutpat ex.
-          Vestibulum quis vulputate orci, sit amet dignissim ex. Vestibulum
-          pulvinar faucibus metus eget pulvinar. Nullam diam elit, dictum eu
-          ornare sit amet, tincidunt at erat. Etiam sollicitudin magna a egestas
-          tincidunt. Curabitur at blandit erat. Aliquam dictum volutpat eros id
-          dignissim. Aliquam erat volutpat. Orci varius natoque penatibus et
-          magnis dis parturient montes, nascetur ridiculus mus. Morbi turpis
-          sapien, finibus euismod augue non, iaculis ultrices nibh. Vivamus nec
-          porta neque, id maximus nunc. Nunc nec elementum libero. Donec
-          eleifend elementum consectetur.
-        </p>
-      </p-tabPanel>
-      <p-tabPanel header="Header 3">
-        <p>
-          Aliquam pharetra libero scelerisque gravida condimentum. Quisque non
-          erat quam. Cras velit lectus, vehicula vel tortor vitae, placerat
-          maximus nulla. Vivamus placerat posuere orci, eu sagittis mauris
-          sollicitudin sit amet. Morbi tincidunt neque et pretium sollicitudin.
-          Nullam quis mi maximus tellus sagittis sodales. Pellentesque in
-          porttitor nisi. In est lorem, ultrices ut iaculis vel, tincidunt nec
-          leo. Maecenas id libero lobortis, efficitur nisi et, rhoncus elit. Sed
-          gravida pellentesque justo sed suscipit. Donec varius maximus dolor a
-          suscipit.
-        </p>
+    <p-tabView *ngIf="sections$ | async as sections">
+      <p-tabPanel *ngFor="let section of sections" [header]="section.name">
+        <div [innerHTML]="section.content"></div>
       </p-tabPanel>
     </p-tabView>
   </div>
