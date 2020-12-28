@@ -55,44 +55,14 @@
       </p-tabPanel>
     </p-tabView>
   </div>
-  <div class="p-col-6 p-md-3 p-p-2">
-    <p-card header="Post 1">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
-      </p>
-    </p-card>
+  <div class="p-col-12">
+    <h2>{{ "COMPANIES" | translate }}</h2>
   </div>
-  <div class="p-col-6 p-md-3 p-p-2">
-    <p-card header="Post 2">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
-      </p>
-    </p-card>
-  </div>
-  <div class="p-col-6 p-md-3 p-p-2">
-    <p-card header="Post 3">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
-      </p>
-    </p-card>
-  </div>
-  <div class="p-col-6 p-md-3 p-p-2">
-    <p-card header="Post 4">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
-      </p>
-    </p-card>
-  </div>
+  <ng-container *ngIf="posts$ | async as posts">
+    <div class="p-col-6 p-md-3 p-p-2" *ngFor="let post of posts">
+      <p-card [header]="post.name">
+        <div [innerHTML]="post.content | truncate: 250:'...':true"></div>
+      </p-card>
+    </div>
+  </ng-container>
 </div>

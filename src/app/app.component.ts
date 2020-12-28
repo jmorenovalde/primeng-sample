@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * Main componet of the application, it's lanched on the application Boostrap.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +15,12 @@ export class AppComponent implements OnInit {
    */
   public direction = 'ltr';
 
+  /**
+   * Constructor method.
+   * In this case has code because it's needed to inizializate the translateService.
+   * @param translateService {TranslateService} the service for the translates.
+   * @constructor
+   */
   constructor(private translateService: TranslateService) {
     translateService.addLangs(['en', 'es', 'ar']);
     translateService.setDefaultLang('es');
@@ -23,12 +32,19 @@ export class AppComponent implements OnInit {
     }
   }
 
+  /**
+   *  @ignore
+   * Init method
+   */
   ngOnInit(): void {
     this.translateService.onLangChange.subscribe((language) => {
       this.direction = this.getDirectionContent(language.lang);
     });
   }
 
+  /**
+   * Method to get the direction of the language.
+   */
   private getDirectionContent(language: string): string {
     if (language === 'ar') {
       return 'rtl';

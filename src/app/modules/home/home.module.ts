@@ -6,6 +6,7 @@ import { TabViewModule } from 'primeng/tabview';
 
 import { HomeComponent } from './home.component';
 import { CardModule } from 'primeng/card';
+import { NgTruncatePipeModule } from '@pipes/truncate.pipe';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -15,6 +16,7 @@ import { CardModule } from 'primeng/card';
     GalleriaModule,
     TabViewModule,
     TranslateModule.forChild(),
+    NgTruncatePipeModule,
   ],
 })
 export class HomeModule {}

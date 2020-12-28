@@ -23,11 +23,16 @@ import { FormComponent } from '@pages/form/form.component';
 import { GraphicsComponent } from '@pages/graphics/graphics.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 
-// AoT requires an exported function for factories
+/**
+ * AoT requires an exported function for factories to the TranslateModule
+ */
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
+/**
+ * Main module of the application.
+ */
 @NgModule({
   declarations: [
     AppComponent,

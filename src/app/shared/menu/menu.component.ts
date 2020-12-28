@@ -2,6 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 
+/**
+ * Component for the menu bar of the application.
+ */
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -15,9 +18,9 @@ export class MenuComponent implements OnInit {
   public items: MenuItem[] = [];
 
   /**
-   * @constructor
    * Constructor of the compomente object.
    * @param translateService {TranslateService} The service to get the translations from i18n.
+   * @constructor
    */
   constructor(private translateService: TranslateService) {}
 
@@ -31,6 +34,9 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  /**
+   * Method get the translatios, if translatiosn is undefined, load form the TranslateService.
+   */
   private loadTranslations(translations?: any) {
     let translates: any;
     if (translations) {
@@ -98,6 +104,9 @@ export class MenuComponent implements OnInit {
     ];
   }
 
+  /**
+   * This method is used to change the language of the aplication.
+   */
   private changeLanguage(language: string): void {
     if (
       this.translateService?.getLangs().includes(language) &&
