@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compodoc": "npx compodoc -p tsconfig.json -n \"PrimeNG Sample\" -d ./dist/doc",
-    "compodoc:dev": "npx compodoc -p tsconfig.json -n \"PrimeNG Sample\" --watch --serve --open -d ./dist/doc"
+    "compodoc:dev": "npx compodoc -p tsconfig.json -n \"PrimeNG Sample\" -d ./dist/doc --open --serve --watch"
   },
   "private": "false",
   "dependencies": {
