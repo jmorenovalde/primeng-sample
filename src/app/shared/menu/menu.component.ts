@@ -38,9 +38,8 @@ export class MenuComponent implements OnInit {
    * Method get the translatios, if translatiosn is undefined, load form the TranslateService.
    */
   private loadTranslations(translations?: any) {
-    let translates: any;
     if (translations) {
-      translates = translations;
+      this.items = this.initMenuItems(translations);
     } else {
       this.translateService
         .get([
@@ -54,16 +53,18 @@ export class MenuComponent implements OnInit {
           'ARABIC',
         ])
         .subscribe((items) => {
-          translates = items;
+          this.items = this.initMenuItems(items);
         });
-    }
-    if (translates) {
-      this.items = this.initMenuItems(translates);
     }
   }
 
   /**
    * Method to load the items of the menu.
+   * @param translates {any} the translates of the elements of the menu. The format is {key: value}.
+   * @return {MenuItem[]} an array with the elements of the menu, in the language of the translates.
+   *
+   * > **NOTE**: if you want use command, you must put a arrow function, because it is a callback fuction.
+   *   In this case, you will have the scope of the component.
    */
   private initMenuItems(translates: any): MenuItem[] {
     return [

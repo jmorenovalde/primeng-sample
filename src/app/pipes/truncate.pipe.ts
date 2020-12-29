@@ -28,7 +28,6 @@ export class TruncatePipe implements PipeTransform {
     preserve?: boolean
   ): any {
     if (!this.isString(input)) {
-      console.log('Not is an string');
       return input;
     }
 

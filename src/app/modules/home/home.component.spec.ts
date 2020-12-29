@@ -11,6 +11,7 @@ import { HomeService } from '../../services/home.service';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let translateService: any;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -28,11 +29,23 @@ describe('HomeComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
+    translateService = TestBed.inject(TranslateService);
     component = fixture.componentInstance;
+    translateService.addLangs(['en', 'es', 'ar']);
+    translateService.setDefaultLang('es');
+    translateService.use('es');
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('change language', () => {
+    translateService.use('en');
+    fixture.detectChanges();
+    expect(component).toBeTruthy();
+    //p-galleria-thumbnail-items
+    const thumbnails = 
   });
 });
