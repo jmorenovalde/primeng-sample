@@ -45,7 +45,5 @@ describe('HomeComponent', () => {
     translateService.use('en');
     fixture.detectChanges();
     expect(component).toBeTruthy();
-    //p-galleria-thumbnail-items
-    const thumbnails = 
   });
 });
