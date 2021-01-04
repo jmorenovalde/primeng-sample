@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HomeModule } from '@modules/home/home.module';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormComponent } from '@pages/form/form.component';
-import { GraphicsComponent } from '@pages/graphics/graphics.component';
-import { ListComponent } from '@pages/list/list.component';
+import { GraphicsComponent } from '@modules/graphics/graphics.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { FooterComponent } from '@shared/footer/footer.component';
 import { HeaderComponent } from '@shared/header/header.component';
 import { MenuModule } from '@shared/menu/menu.module';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ListModule } from './modules/list/list.model';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -20,7 +20,6 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         FooterComponent,
-        ListComponent,
         FormComponent,
         GraphicsComponent,
         NotFoundComponent,
@@ -29,6 +28,7 @@ describe('AppComponent', () => {
         BrowserModule,
         HomeModule,
         HttpClientTestingModule,
+        ListModule,
         MenuModule,
         TranslateModule.forRoot(),
         RouterTestingModule,

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { HomeComponent } from './modules/home/home.component';
-import { ListComponent } from './pages/list/list.component';
-import { FormComponent } from './pages/form/form.component';
-import { GraphicsComponent } from './pages/graphics/graphics.component';
+import { NotFoundComponent } from '@pages/not-found/not-found.component';
+import { HomeComponent } from '@modules/home/home.component';
+import { ListComponent } from '@modules/list/list.component';
+import { FormComponent } from '@pages/form/form.component';
+import { GraphicsComponent } from '@modules/graphics/graphics.component';
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },

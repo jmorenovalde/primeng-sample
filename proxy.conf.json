@@ -1,0 +1,20 @@
+{
+  "/MA-OPENDATA/*": {
+    "target": "https://datosabiertos.malaga.eu/recursos/",
+    "changeOrigin": true,
+    "secure": false,
+    "pathRewrite": {
+      "^/MA-OPENDATA": ""
+    },
+    "logLevel": "debug"
+  },
+  "/JDA-OPENDATA/*": {
+    "target": "http://www.juntadeandalucia.es/icms/rest/datasets/",
+    "changeOrigin": true,
+    "secure": false,
+    "pathRewrite": {
+      "^/JDA-OPENDATA": ""
+    },
+    "logLevel": "debug"
+  }
+}

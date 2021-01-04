@@ -9,5 +9,7 @@
   "LIST": "Listado",
   "PAGE_NOT_FOUND": "La dirección que buscas no está disponible.",
   "SPANISH": "Español",
-  "COMPANIES": "Empresas"
+  "COMPANIES": "Empresas",
+  "TOTAL": "Total",
+  "FREE": "Libres"
 }

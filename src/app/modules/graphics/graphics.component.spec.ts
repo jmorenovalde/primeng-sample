@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraphicsComponent } from './graphics.component';
+import { MalagaOpenDataService } from '../../services/malaga-open-data.service';
 
 describe('GraphicsComponent', () => {
   let component: GraphicsComponent;
@@ -8,9 +9,10 @@ describe('GraphicsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraphicsComponent ]
-    })
-    .compileComponents();
+      declarations: [GraphicsComponent],
+      imports: [],
+      providers: [MalagaOpenDataService],
+    }).compileComponents();
   });
 
   beforeEach(() => {

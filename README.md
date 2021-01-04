@@ -1,29 +1,49 @@
 # PrimengSample
 
-Proyecto para mostrar cómo se haría un sitio web usando componentes de __PrimeNG__.
+Project to show how a website would be made using components of __PrimeNG__ [[1]](#resources).
 
-Este ejemplo intentaré tenerlo actualizado siempre a la versión más avanzada de Angular y PrimeNG que pueda, en el momento que se cambie de versión, crearé una nueva versión y un tag.
+This example will try to always have it updated to the most advanced version of Angular and PrimeNG that I can, at the moment the version is changed, I will create a new version and a tag.
 
-Como empiezo con la versión 11 de _Angular_ y de _PrimeNG_, la versión va a ser 11.
+## Content
 
-Además de PrimeNG, voy a utilizar @ngx-translate para las traducciones de los idiomas (español, inglés y árabe). Se ìedem meter más idiomas, pero con esos tres creo que va sobrado. El árabe se ha introducido para mostrar la peculiaridad de **PrimeNG** que nos permite usar `RTL`. Las traducciones son de Google Translate.
+* [Information](#information).
+* [Graphics](#graphics).
+* [Resources](#resources).
 
-Si te descargas o clonas el proyecto proyecto lo primero que debes hacer es instalar los componentes:
+## Information
+
+Since I start with version 11 of _Angular_ and _PrimeNG_, the version is going to be 11.
+
+Besides PrimeNG, I am going to use `@ngx-translate` [[2]](#resources) for the translations of the languages ​​(_Spanish_, _English_ and _Arabic_). You can put more languages, but with those three I think there is plenty. _Arabic_ has been introduced to show the **PrimeNG** quirk that allows us to use `RTL`. The translations have been made with Google Translate.
+
+If you download or clone the project, the first thing you should do is install the components:
 
 ```bash
 npm install
 ```
 
-Una vez que se ha instalado, si queremos arrancar esta demo, debes ejecutar:
+Once it has been installed, if we want to start this demo, you must run:
 
 ```bash
 npm run start
 ```
 
-Eso levantará el sitio web de pruebas en la url `http://localhost:4200`.
+That will bring up the test website at the url `http: // localhost: 4200`.
 
-Por defecto, nos aparecerá la web en el idioma del navegador. Podemos cambiar el idioma con el menú Idioma, de forma que si ponemos el idioma árabe, veremos como se cambia todo a _RTL_. y si volvemos a español o inglés, se pondrá de nuevo en _LTR_.
+By default, the website will appear in the browser language. We can change the language with the Language menu, so that if we put the _Arabic_ language, we will see how everything is changed to _RTL_. and if we go back to _Spanish_ or _English_, it will go back to _LTR_.
 
-Para poder hacer esto, en el `app.component.html` se ha puesto una `div` en la que se indica la dirección del texto y el estilo para que todos los demás estilos de _PrimeNG_ se adapten a la dirección del idioma.
+In order to do this, in the `app.component.html` a` div` has been put in which the direction of the text and the style are indicated so that all the other styles of _PrimeNG_ adapt to the direction of the language.
+
+## Graphics
+
+For the charts page, `Chart.js` has been installed as indicated in the _PrimeNG_ documentation for the charts and they have been configured in the` angular.json` [[3]](#resources). The data of the graphs have been taken from the Open Data page of the Malaga Town Hall [[4]](#resources).
 
 
+## Resources
+[1] [PrimeNG web address](https://www.primefaces.org/primeng/).
+
+[2] [Address of @ngx-translate](http://www.ngx-translate.com/).
+
+[3] [Chart.js Settings in PrimeNG](https://www.primefaces.org/primeng/showcase/#/chart).
+
+[4] [Open Data Page of the Malaga Town Hall](http://datosabierto.malaga.eu/).

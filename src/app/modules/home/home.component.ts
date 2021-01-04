@@ -56,21 +56,23 @@ export class HomeComponent implements OnInit {
    * @param translateService {TranslateService} Provide the translations and detect the change into the language
    * @constructor
    */
-  constructor(
-    private homeService: HomeService,
-    private translateService: TranslateService
-  ) {}
+  constructor(private homeService: HomeService, private translateService: TranslateService) {}
 
   /**
    * @ignore
    * The init method
    */
   ngOnInit(): void {
+    this.loadData(this.translateService.currentLang);
     this.translateService.onLangChange.subscribe((language) => {
-      this.loadImages(language.lang);
-      this.loadSections(language.lang);
-      this.loadPosts(language.lang);
+      this.loadData(language.lang);
     });
+  }
+
+  private loadData(language: string) {
+    this.loadImages(language);
+    this.loadSections(language);
+    this.loadPosts(language);
   }
 
   /**
@@ -94,8 +96,6 @@ export class HomeComponent implements OnInit {
    * @param language {string} the code of the language to the posts.
    */
   private loadPosts(language: any) {
-    this.posts$ = this.homeService
-      .getPost(language)
-      .pipe(map((val) => val.slice(0, 4)));
+    this.posts$ = this.homeService.getPost(language).pipe(map((val) => val.slice(0, 4)));
   }
 }
