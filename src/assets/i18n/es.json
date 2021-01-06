@@ -11,5 +11,15 @@
   "SPANISH": "Español",
   "COMPANIES": "Empresas",
   "TOTAL": "Total",
-  "FREE": "Libres"
+  "FREE": "Libres",
+  "ID": "Id",
+  "NAME": "Nombre",
+  "CITY": "Ciudad",
+  "STATE": "Provincia",
+  "ADDRESS": "Dirección",
+  "MINISTRY": "Consejería",
+  "TYPE": "Tipo",
+  "INVENTARY": "Num. Inventario",
+  "USING": "Uso",
+  "MODIFIED": "Última modificación"
 }

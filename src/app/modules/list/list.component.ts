@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { JuntaAndaluciaOpenDataService } from '@services/junta-andalucia-open-data.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -17,6 +17,22 @@ export class ListComponent implements OnInit, OnDestroy {
    * Items to show in the table.
    */
   public items: JDAProperty[] = [];
+
+  /**
+   * Array with the columns configuration.
+   */
+  public cols: any[];
+
+  /**
+   * Columns to show
+   */
+  private _selectedColumns: any[];
+  @Input() get selectedColumns(): any[] {
+    return this._selectedColumns;
+  }
+  set selectedColumns(val: any[]) {
+    this._selectedColumns = this.cols.filter((col) => val.includes(col));
+  }
 
   /**
    * The fisrt index of the list
@@ -47,6 +63,8 @@ export class ListComponent implements OnInit, OnDestroy {
    * The init method.
    */
   ngOnInit(): void {
+    this.cols = this.initColumns();
+    this._selectedColumns = this.cols;
     this.loadData();
   }
 
@@ -59,10 +77,25 @@ export class ListComponent implements OnInit, OnDestroy {
     this.unsubscribe$.unsubscribe();
   }
 
+  private initColumns(): any[] {
+    return [
+      { field: 'id', header: 'ID', isDate: false },
+      { field: 'name', header: 'NAME', isDate: false },
+      { field: 'city', header: 'CITY', isDate: false },
+      { field: 'state', header: 'STATE', isDate: false },
+      { field: 'address', header: 'ADDRESS', isDate: false },
+      { field: 'ministry', header: 'MINISTRY', isDate: false },
+      { field: 'inventary', header: 'INVENTARY', isDate: false },
+      { field: 'type', header: 'TYPE', isDate: false },
+      { field: 'using', header: 'USING', isDate: false },
+      { field: 'modified', header: 'MODIFIED', isDate: true },
+    ];
+  }
+
   private loadData() {
     this.isLoading = true;
     this.jdaOpenData
-      .getProperties(100, 1)
+      .getProperties(10, 1)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (properties: any[]) => {
@@ -73,6 +106,7 @@ export class ListComponent implements OnInit, OnDestroy {
               this.items.push(this.processItemProperty(item));
               this.isLoading = false;
             });
+            console.log(this.items);
           }
         },
         (error: any) => (this.isLoading = false)
@@ -101,7 +135,7 @@ export class ListComponent implements OnInit, OnDestroy {
       if (element === 'nid' || element === 'num_inventario') {
         return '0';
       } else {
-        return '';
+        return '333';
       }
     }
   }

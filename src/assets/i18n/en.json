@@ -11,5 +11,15 @@
   "SPANISH": "Spanish",
   "COMPANIES": "Companies",
   "TOTAL": "Total",
-  "FREE": "Free"
+  "FREE": "Free",
+  "ID": "Id",
+  "NAME": "Name",
+  "CITY": "City",
+  "STATE": "State",
+  "ADDRESS": "Address",
+  "MINISTRY": "Ministry",
+  "TYPE": "Type",
+  "INVENTARY": "Inventary Num.",
+  "USING": "Using",
+  "MODIFIED": "Last modified"
 }

@@ -1,23 +1,52 @@
 <ng-container *ngIf="isLoading; else datatable">
-  <em class="pi pi-spin pi-spinner" style="font-size: 10rem"></em>
+  <!-- we should use p-spinner, but it's more easy -->
+  <div class="p-d-flex p-jc-center">
+    <em class="pi pi-spin pi-spinner" style="font-size: 7rem"></em>
+  </div>
 </ng-container>
 <ng-template #datatable>
   <p>Fuente: Datos Abiertos de la Junta de Andalucía</p>
-  <p-table [value]="items" [paginator]="true" [rows]="7" [(first)]="first">
-    <ng-template pTemplate="header">
+  <p-table #dt1 [value]="items" [paginator]="true" [rows]="7" [columns]="selectedColumns">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-jc-between">
+        <p-multiSelect
+          placeholder="Choose Columns"
+          optionLabel="header"
+          selectedItemsLabel="{0} columns selected"
+          [options]="cols"
+          [(ngModel)]="selectedColumns"
+          [style]="{ minWidth: '200px' }"
+        >
+          <ng-template let-option pTemplate="item">
+            <div>{{ option.header | translate }}</div>
+          </ng-template>
+        </p-multiSelect>
+        <div class="p-ml-auto">
+          <input
+            pInputText
+            type="text"
+            (input)="dt1.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search keyword"
+          />
+          <em class="pi pi-search p-ml-2"></em>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
       <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>CITY</th>
-        <th>STATE</th>
+        <th *ngFor="let col of columns">{{ col.header | translate }}</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-item>
+    <ng-template pTemplate="body" let-item let-columns="columns">
       <tr>
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.city }}</td>
-        <td>{{ item.state }}</td>
+        <td *ngFor="let col of columns">
+          <ng-container *ngIf="col.isDate; else tmpNoDate">
+            {{ item[col.field] | date: 'dd/MM/YYYY' }}
+          </ng-container>
+          <ng-template #tmpNoDate>
+            {{ item[col.field] }}
+          </ng-template>
+        </td>
       </tr>
     </ng-template>
   </p-table>
