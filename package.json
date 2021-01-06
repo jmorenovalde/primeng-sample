@@ -10,7 +10,7 @@
     "ng": "ng",
     "start": "ng serve --hmr true",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compodoc": "npx compodoc -p tsconfig.json -n \"PrimeNG Sample\" -d ./dist/doc",

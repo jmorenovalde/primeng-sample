@@ -95,7 +95,6 @@ export class GraphicsComponent implements OnInit, OnDestroy {
         (parkings: MODParking[]) => {
           this.items = this.processDataParkings(parkings);
           this.dataset = this.processDatasetParkings(this.items, this.dataset, this.colors);
-          console.log('Dataset', this.dataset);
         },
         (error) => {
           this.isLoading = false;
