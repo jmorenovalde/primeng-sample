@@ -8,7 +8,7 @@
   "description": "Sample of PrimeNG 11 and Angular 11",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --hmr true",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test --code-coverage",
     "lint": "ng lint",

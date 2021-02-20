@@ -73,11 +73,11 @@
         }"
         class="errores"
       >
-        <span *ngIf="myForm.get('zip').errors.min">{{
-          'VALUE_LESS_THAN' | translate: { minValue: myForm.get('zip').errors.min.min }
+        <span *ngIf="myForm.get('zip').errors?.min">{{
+          'VALUE_LESS_THAN' | translate: { minValue: myForm.get('zip').errors?.min?.min }
         }}</span>
-        <span *ngIf="myForm.get('zip').errors.max">{{
-          'VALUE_MORE_THAN' | translate: { maxValue: myForm.get('zip').errors.max.max }
+        <span *ngIf="myForm.get('zip').errors?.max">{{
+          'VALUE_MORE_THAN' | translate: { maxValue: myForm.get('zip').errors?.max?.max }
         }}</span>
       </small>
     </div>

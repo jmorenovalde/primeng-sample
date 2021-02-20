@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -16,7 +16,7 @@ export interface ItemDropDown {
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit, AfterViewInit, OnDestroy {
+export class FormComponent implements OnInit, OnDestroy {
   /**
    * The form of the reactive form.
    */
@@ -42,16 +42,11 @@ export class FormComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   ngOnInit(): void {
     this.initForm();
+    // This setTimeout is needet to load the translates of the items.
     setTimeout(() => {
       this.states = this.loadStates();
     }, 200);
   }
-
-  /**
-   * @ignore
-   * The after view init method.
-   */
-  ngAfterViewInit(): void {}
 
   /**
    * @ignore
@@ -88,6 +83,9 @@ export class FormComponent implements OnInit, AfterViewInit, OnDestroy {
     return listStates;
   }
 
+  /**
+   * Init the Reactive Forms with values and Validations.
+   */
   private initForm(): void {
     this.myForm = new FormGroup({
       firstname: new FormControl('', [Validators.required]),
