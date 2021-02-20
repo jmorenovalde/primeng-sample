@@ -38,7 +38,6 @@ In order to do this, in the `app.component.html` a` div` has been put in which t
 
 For the charts page, `Chart.js` has been installed as indicated in the _PrimeNG_ documentation for the charts and they have been configured in the` angular.json` [[3]](#resources). The data of the graphs have been taken from the Open Data page of the Malaga Town Hall [[4]](#resources).
 
-
 ## Resources
 [1] [PrimeNG web address](https://www.primefaces.org/primeng/).
 

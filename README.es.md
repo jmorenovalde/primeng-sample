@@ -38,7 +38,6 @@ Para poder hacer esto, en el `app.component.html` se ha puesto una `div` en la q
 
 Para la página de las gráficas, se ha instaldo `Chart.js` tal y como se indica en la documentación de _PrimeNG_ de las gráficas y se han configurado en el `angular.json` [[3]](#recursos). Los datos de las gráficas se han sacado de la página de Datos Abiertos del Ayuntamiento de Málaga [[4]](#recursos).
 
-
 ## Recursos
 [1] [Dirección web de PrimeNG](https://www.primefaces.org/primeng/).
 
