@@ -5,8 +5,8 @@
 
 /**
  * Fuction to get a JSON from a CSV data.
- * @param csvData {string} the csv datasource.
- * @return {string[]} return the JSON object of the csv data.
+ * @param csvData the csv datasource.
+ * @returns return the JSON object of the csv data.
  */
 export function csvToJson(csvData: string): string[] {
   let data = csvToArray(csvData);
@@ -23,9 +23,9 @@ export function csvToJson(csvData: string): string[] {
 
 /**
  * This funciton convert the csv into a array of arrays.
- * @param csvData {string} the csv data
- * @param delimiter {string} the delimiter of the csv. This param is optional and the default value is `,`.
- * @returns {string[][]} the csv data content in arrays.
+ * @param csvData the csv data
+ * @param delimiter the delimiter of the csv. This param is optional and the default value is `,`.
+ * @returns the csv data content in arrays.
  */
 function csvToArray(csvData: string, delimiter?: string): string[][] {
   delimiter = delimiter || ',';

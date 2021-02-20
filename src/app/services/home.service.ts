@@ -12,14 +12,12 @@ import { Photo, Post, Section } from '@models/models';
 export class HomeService {
   /**
    * @ignore
-   * @constructor
    */
   constructor() {}
 
   /**
    * This method return the information of the photos from the language.
-   * @param language {string} the string of the code of the lenguage.
-   * @returns {Observable<Photo[]>} return an array with the photos.
+   * @param language the string of the code of the lenguage.
    */
   public getGalleryPhotos(language: string): Observable<Photo[]> {
     switch (language) {
@@ -34,79 +32,62 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of Spanish photos.
-   * @returns {Observable<Photo[]>} return an array with the Spanish photos.
+   * @returns return an array with the Spanish photos.
    */
   private responseSpanishPhotos(): Observable<Photo[]> {
     return of([
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
         link: 'https://www.freeimages.com/es/photo/swiss-mountains-1362975',
-        alt:
-          'Foto de las montañas de Suiza de stock gratuita (www.freeimages.com)',
+        alt: 'Foto de las montañas de Suiza de stock gratuita (www.freeimages.com)',
         title: 'Las montañas de Suiza',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
         link: 'https://www.freeimages.com/es/photo/aliens-1-1373417',
         alt: 'Foto de un crosscircle (www.freeimages.com)',
         title: 'Crosscircle',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
         link: 'https://www.freeimages.com/es/photo/dragon-fly-1391358',
         alt: 'Foto de una libélula (www.freeimages.com)',
         title: 'Dragon Fly',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
         link: 'https://www.freeimages.com/es/photo/selfridges-2-1470748',
         alt: 'Foto de la fachada de un edificio (www.freeimages.com)',
         title: 'Fachada de edificio',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
         link: 'https://www.freeimages.com/es/photo/antelope-canyon-4-1396775',
         alt: 'Foto un cañón (www.freeimages.com)',
         title: 'Cañon',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
         link: 'https://www.freeimages.com/es/photo/garter-snake-1401165',
         alt: 'Foto una culebra (www.freeimages.com)',
         title: 'Culebra',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
         link: 'https://www.freeimages.com/es/photo/corn-field-1-1368931',
         alt: 'Foto de un campo de trigo (www.freeimages.com)',
         title: 'Campo de trigo',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
         link: 'https://www.freeimages.com/es/photo/halloween-1563652',
         alt: 'Foto de calabazas de halloween (www.freeimages.com)',
         title: 'Halloween',
@@ -116,78 +97,62 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of Arabic photos.
-   * @returns {Observable<Photo[]>} return an array with the Arabic photos.
+   * @returns return an array with the Arabic photos.
    */
   private responseArabicPhotos(): Observable<Photo[]> {
     return of([
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
         link: 'https://www.freeimages.com/es/photo/swiss-mountains-1362975',
         alt: 'صورة مخزون مجانية للجبال السويسرية (www.freeimages.com)',
         title: 'جبال سويسرا',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
         link: 'https://www.freeimages.com/photo/aliens-1-1373417',
         alt: 'صورة لدائرة متقاطعة (www.freeimages.com)',
         title: 'عبر الدائرة',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
         link: 'https://www.freeimages.com/photo/dragon-fly-1391358',
         alt: 'صورة ليعسوب (www.freeimages.com)',
         title: 'اليعسوب',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
         link: 'https://www.freeimages.com/photo/selfridges-2-1470748',
         alt: 'صورة لواجهة مبنى (www.freeimages.com)',
         title: 'واجهة المبنى',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
         link: 'https://www.freeimages.com/photo/antelope-canyon-4-1396775',
         alt: 'صورة مدفع (www.freeimages.com)',
         title: 'كانيون',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
         link: 'https://www.freeimages.com/photo/garter-snake-1401165',
         alt: 'صورة ثعبان (www.freeimages.com)',
         title: 'ثعبان',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
         link: 'https://www.freeimages.com/photo/corn-field-1-1368931',
         alt: 'صورة لحقل قمح (www.freeimages.com)',
         title: 'حقل القمح',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
         link: 'https://www.freeimages.com/photo/halloween-1563652',
         alt: 'صورة لقرع الهالوين (www.freeimages.com)',
         title: 'عيد الرعب',
@@ -197,78 +162,62 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of English photos.
-   * @returns {Observable<Photo[]>} return an array with the English photos.
+   * @returns return an array with the English photos.
    */
   private responseEnglishPhotos(): Observable<Photo[]> {
     return of([
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/371/swiss-mountains-1362975.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/371/swiss-mountains-1362975.jpg',
         link: 'https://www.freeimages.com/photo/swiss-mountains-1362975',
         alt: 'Photo of Swiss mountains (www.freeimages.com)',
         title: 'Swiss mountains',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/fde/aliens-1-1373417.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/fde/aliens-1-1373417.jpg',
         link: 'https://www.freeimages.com/photo/aliens-1-1373417',
         alt: 'Photo of a crosscircle (www.freeimages.com)',
         title: 'Crosscircle',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/b5a/dragon-fly-1391358.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/b5a/dragon-fly-1391358.jpg',
         link: 'https://www.freeimages.com/photo/dragon-fly-1391358',
         alt: 'Photo of a dragon fly (www.freeimages.com)',
         title: 'Dragon Fly',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/9f9/selfridges-2-1470748.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/9f9/selfridges-2-1470748.jpg',
         link: 'https://www.freeimages.com/photo/selfridges-2-1470748',
         alt: 'Photo of the facade of a building (www.freeimages.com)',
         title: 'Facade of a building',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/81b/antelope-canyon-4-1396775.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/81b/antelope-canyon-4-1396775.jpg',
         link: 'https://www.freeimages.com/photo/antelope-canyon-4-1396775',
         alt: 'Photo of the antelope canyon (www.freeimages.com)',
         title: 'Antelope Canyon',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/45f/garter-snake-1401165.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/45f/garter-snake-1401165.jpg',
         link: 'https://www.freeimages.com/photo/garter-snake-1401165',
         alt: 'Photo of a snake (www.freeimages.com)',
         title: 'Snake',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/e12/corn-field-1-1368931.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/e12/corn-field-1-1368931.jpg',
         link: 'https://www.freeimages.com/photo/corn-field-1-1368931',
         alt: 'Photo of a wheat field (www.freeimages.com)',
         title: 'Wheat field',
       },
       {
-        previewImageSrc:
-          'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
-        thumbnailImageSrc:
-          'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
+        previewImageSrc: 'https://images.freeimages.com/images/large-previews/24e/halloween-1563652.jpg',
+        thumbnailImageSrc: 'https://images.freeimages.com/images/small-previews/24e/halloween-1563652.jpg',
         link: 'https://www.freeimages.com/photo/halloween-1563652',
         alt: 'Photo of Halloween pumpkins (www.freeimages.com)',
         title: 'Halloween Pumpkins',
@@ -278,8 +227,8 @@ export class HomeService {
 
   /**
    * This method return the information of the section from the language.
-   * @param language {string} the string of the code of the lenguage.
-   * @returns {Observable<Section[]>} return an array with the sections.
+   * @param language the string of the code of the lenguage.
+   * @returns return an array with the sections.
    */
   public getSections(language: string): Observable<Section[]> {
     switch (language) {
@@ -294,7 +243,7 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of Spanish sections.
-   * @returns {Observable<Section[]>} return an array with the sections.
+   * @returns return an array with the sections.
    */
   private responseSpanishSectios(): Observable<Section[]> {
     return of([
@@ -325,7 +274,7 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of Arabic sections.
-   * @returns {Observable<Section[]>} return an array with the sections.
+   * @returns return an array with the sections.
    */
   private responseArabicSectios(): Observable<Section[]> {
     return of([
@@ -356,7 +305,7 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of English sections.
-   * @returns {Observable<Section[]>} return an array with the sections.
+   * @returns return an array with the sections.
    */
   private responseEnglishSectios(): Observable<Section[]> {
     return of([
@@ -389,8 +338,8 @@ export class HomeService {
 
   /**
    * This method return the information of the companies from the language.
-   * @param language {string} the string of the code of the lenguage.
-   * @returns {Observable<Post[]>} return an array with the Posts.
+   * @param language the string of the code of the lenguage.
+   * @returns return an array with the Posts.
    */
   public getPost(language: string): Observable<Post[]> {
     switch (language) {
@@ -405,7 +354,7 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of Spanish posts.
-   * @returns {Observable<Post[]>} return an array with the posts.
+   * @returns return an array with the posts.
    */
   private responseSpanishPosts(): Observable<Post[]> {
     return of([
@@ -439,7 +388,7 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of Arabic posts.
-   * @returns {Observable<Post[]>} return an array with the posts.
+   * @returns return an array with the posts.
    */
   private responseArabicPosts(): Observable<Post[]> {
     return of([
@@ -473,7 +422,7 @@ export class HomeService {
 
   /**
    * This method provide to the fake method the contnent of English posts.
-   * @returns {Observable<Post[]>} return an array with the posts.
+   * @returns return an array with the posts.
    */
   private responseEnglishPosts(): Observable<Post[]> {
     return of([

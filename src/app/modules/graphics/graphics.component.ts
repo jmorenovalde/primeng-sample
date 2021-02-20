@@ -60,7 +60,6 @@ export class GraphicsComponent implements OnInit, OnDestroy {
 
   /**
    * The constructor method
-   * @constructor
    */
   constructor(private malagaOpenData: MalagaOpenDataService) {}
 

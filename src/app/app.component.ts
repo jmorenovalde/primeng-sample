@@ -18,8 +18,7 @@ export class AppComponent implements OnInit {
   /**
    * Constructor method.
    * In this case has code because it's needed to inizializate the translateService.
-   * @param translateService {TranslateService} the service for the translates.
-   * @constructor
+   * @param translateService the service for the translates.
    */
   constructor(private translateService: TranslateService) {
     translateService.addLangs(['en', 'es', 'ar']);

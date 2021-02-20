@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { FormComponent } from './form.component';
 
@@ -8,9 +9,9 @@ describe('FormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormComponent ]
-    })
-    .compileComponents();
+      declarations: [FormComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
   });
 
   beforeEach(() => {

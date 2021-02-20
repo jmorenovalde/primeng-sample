@@ -1,1 +1,90 @@
-<p>form works!</p>
+<h2>{{ 'FORM' | translate }}</h2>
+<form [formGroup]="myForm">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-6">
+      <label for="firstname">{{ 'FIRSTNAME' | translate }} <small class="mandatory">*</small></label>
+      <input formControlName="firstname" id="firstname" type="text" pInputText />
+      <small
+        [ngStyle]="{
+          visibility:
+            myForm.get('firstname').invalid && (myForm.get('firstname').touched || myForm.get('firstname').dirty)
+              ? ' visible'
+              : 'hidden'
+        }"
+        class="errores"
+        >{{ 'REQUIED_FIELD' | translate }}</small
+      >
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="lastname">{{ 'LASTNAME' | translate }} <small class="mandatory">*</small></label>
+      <input formControlName="lastname" id="lastname" type="text" pInputText />
+      <small
+        [ngStyle]="{
+          visibility:
+            myForm.get('lastname').invalid && (myForm.get('lastname').touched || myForm.get('lastname').dirty)
+              ? ' visible'
+              : 'hidden'
+        }"
+        class="errores"
+        >{{ 'REQUIED_FIELD' | translate }}</small
+      >
+    </div>
+    <div class="p-field p-col-12">
+      <label for="email">{{ 'EMAIL' | translate }} <small class="mandatory">*</small></label>
+      <input formControlName="email" id="email" type="email" pInputText />
+      <small
+        [ngStyle]="{
+          visibility:
+            myForm.get('email').invalid && (myForm.get('email').touched || myForm.get('email').dirty)
+              ? ' visible'
+              : 'hidden'
+        }"
+        class="errores"
+      >
+        <span *ngIf="myForm.get('email').errors?.required">{{ 'REQUIED_FIELD' | translate }}</span>
+        <span *ngIf="myForm.get('email').errors?.pattern">{{ 'EMAIL_FIELD' | translate }}</span>
+      </small>
+    </div>
+    <div class="p-field p-col-12">
+      <label for="address">{{ 'ADDRESS' | translate }}</label>
+      <textarea formControlName="address" id="address" type="text" rows="4" pInputTextarea></textarea>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="city">{{ 'CITY' | translate }}</label>
+      <input formControlName="city" id="city" type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label for="state">{{ 'STATE' | translate }}</label>
+      <p-dropdown
+        inputId="state"
+        [options]="states"
+        formControlName="state"
+        placeholder="Select"
+        optionLabel="name"
+      ></p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label for="zip">{{ 'ZIP' | translate }}</label>
+      <input formControlName="zip" id="zip" type="text" pInputText />
+      <small
+        [ngStyle]="{
+          visibility:
+            myForm.get('zip').invalid && (myForm.get('zip').touched || myForm.get('zip').dirty) ? ' visible' : 'hidden'
+        }"
+        class="errores"
+      >
+        <span *ngIf="myForm.get('zip').errors.min">{{
+          'VALUE_LESS_THAN' | translate: { minValue: myForm.get('zip').errors.min.min }
+        }}</span>
+        <span *ngIf="myForm.get('zip').errors.max">{{
+          'VALUE_MORE_THAN' | translate: { maxValue: myForm.get('zip').errors.max.max }
+        }}</span>
+      </small>
+    </div>
+  </div>
+  <div class="p-grid">
+    <div class="p-col-12 p-text-right">
+      <button type="button" pButton label="Enviar" [disabled]="myForm.invalid"></button>
+    </div>
+  </div>
+</form>

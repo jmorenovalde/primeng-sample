@@ -11,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent {
   /**
    * The constructor of the component.
-   * @constructor
    */
   constructor() {}
 }

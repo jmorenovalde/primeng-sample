@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   /**
-   * Constructor of the component
-   * @constructor
+   * Constructor of the component.
    */
   constructor() {}
 }

@@ -16,17 +16,12 @@ export class TruncatePipe implements PipeTransform {
 
   /**
    * The pipe tranform method
-   * @param input {any} if the content of this input is a string, return a string.
-   * @param length {number} if this field exist the input string will be cut this the number of characters of length.
-   * @param suffix {sttring} string to show when truncate.
-   * @param preserve {boolean} if there are an space at the final of the string delete it.
+   * @param input if the content of this input is a string, return a string.
+   * @param length if this field exist the input string will be cut this the number of characters of length.
+   * @param suffix string to show when truncate.
+   * @param preserve if there are an space at the final of the string delete it.
    */
-  transform(
-    input: any,
-    length?: number,
-    suffix?: string,
-    preserve?: boolean
-  ): any {
+  transform(input: any, length?: number, suffix?: string, preserve?: boolean): any {
     if (!this.isString(input)) {
       return input;
     }

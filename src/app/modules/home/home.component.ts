@@ -52,9 +52,8 @@ export class HomeComponent implements OnInit {
 
   /**
    * The constructor of the component
-   * @param homeService {HomeService} Get the informations to the home page.
-   * @param translateService {TranslateService} Provide the translations and detect the change into the language
-   * @constructor
+   * @param homeService Get the informations to the home page.
+   * @param translateService Provide the translations and detect the change into the language
    */
   constructor(private homeService: HomeService, private translateService: TranslateService) {}
 
@@ -77,7 +76,7 @@ export class HomeComponent implements OnInit {
 
   /**
    * Function to load the images.
-   * @param language {string} the code of the language to the images.
+   * @param language the code of the language to the images.
    */
   private loadImages(language: string): void {
     this.images$ = this.homeService.getGalleryPhotos(language);
@@ -85,7 +84,7 @@ export class HomeComponent implements OnInit {
 
   /**
    *
-   * @param language {string} the code of the language to the sections.
+   * @param language the code of the language to the sections.
    */
   private loadSections(language: string): void {
     this.sections$ = this.homeService.getSections(language);
@@ -93,7 +92,7 @@ export class HomeComponent implements OnInit {
 
   /**
    * Get only the first 4 posts.
-   * @param language {string} the code of the language to the posts.
+   * @param language the code of the language to the posts.
    */
   private loadPosts(language: any) {
     this.posts$ = this.homeService.getPost(language).pipe(map((val) => val.slice(0, 4)));

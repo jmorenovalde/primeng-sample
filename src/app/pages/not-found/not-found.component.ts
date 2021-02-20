@@ -11,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
 export class NotFoundComponent {
   /**
    * The constructor method
-   * @constructor
    */
   constructor() {}
 }

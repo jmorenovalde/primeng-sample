@@ -19,8 +19,7 @@ export class MenuComponent implements OnInit {
 
   /**
    * Constructor of the compomente object.
-   * @param translateService {TranslateService} The service to get the translations from i18n.
-   * @constructor
+   * @param translateService The service to get the translations from i18n.
    */
   constructor(private translateService: TranslateService) {}
 
@@ -42,16 +41,7 @@ export class MenuComponent implements OnInit {
       this.items = this.initMenuItems(translations);
     } else {
       this.translateService
-        .get([
-          'HOME',
-          'LIST',
-          'FORM',
-          'GRAPHICS',
-          'LANGUAGE',
-          'SPANISH',
-          'ENGLISH',
-          'ARABIC',
-        ])
+        .get(['HOME', 'LIST', 'FORM', 'GRAPHICS', 'LANGUAGE', 'SPANISH', 'ENGLISH', 'ARABIC'])
         .subscribe((items) => {
           this.items = this.initMenuItems(items);
         });
@@ -60,8 +50,8 @@ export class MenuComponent implements OnInit {
 
   /**
    * Method to load the items of the menu.
-   * @param translates {any} the translates of the elements of the menu. The format is {key: value}.
-   * @return {MenuItem[]} an array with the elements of the menu, in the language of the translates.
+   * @param translates the translates of the elements of the menu. The format is {key: value}.
+   * @returns an array with the elements of the menu, in the language of the translates.
    *
    * > **NOTE**: if you want use command, you must put a arrow function, because it is a callback fuction.
    *   In this case, you will have the scope of the component.
@@ -109,10 +99,7 @@ export class MenuComponent implements OnInit {
    * This method is used to change the language of the aplication.
    */
   private changeLanguage(language: string): void {
-    if (
-      this.translateService?.getLangs().includes(language) &&
-      this.translateService?.currentLang !== language
-    ) {
+    if (this.translateService?.getLangs().includes(language) && this.translateService?.currentLang !== language) {
       this.translateService.use(language);
     }
   }

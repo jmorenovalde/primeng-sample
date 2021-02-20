@@ -54,7 +54,6 @@ export class ListComponent implements OnInit, OnDestroy {
 
   /**
    * The constructor method
-   * @constructor
    */
   constructor(private jdaOpenData: JuntaAndaluciaOpenDataService) {}
 
@@ -106,7 +105,6 @@ export class ListComponent implements OnInit, OnDestroy {
               this.items.push(this.processItemProperty(item));
               this.isLoading = false;
             });
-            console.log(this.items);
           }
         },
         (error: any) => (this.isLoading = false)
